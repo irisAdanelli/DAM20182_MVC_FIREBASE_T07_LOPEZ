@@ -25,7 +25,7 @@ private snapshotChangesSubscription: any;
     }
 
 
-    doRegister(value){
+    /*doRegister(value){
       return new Promise<any>((resolve, reject) => {
         firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
         .then(
@@ -41,7 +41,7 @@ private snapshotChangesSubscription: any;
             res => resolve(res),
             err => reject(err))
           });
-        }
+        }*/
 
         doLogout(){
           return new Promise((resolve, reject) => {
@@ -61,7 +61,7 @@ private snapshotChangesSubscription: any;
         getTasks(){
           return new Promise<any>((resolve, reject) => {
             let currentUser = firebase.auth().currentUser;
-            this.snapshotChangesSubscription = this.afs.collection('usuario').doc(currentUser.uid).collection('tareas').snapshotChanges()
+            this.snapshotChangesSubscription = this.afs.collection('user').doc(currentUser.uid).collection('tareas').snapshotChanges()
             .subscribe(snapshots => {
               resolve(snapshots);
             })
@@ -75,7 +75,7 @@ private snapshotChangesSubscription: any;
         updateTask(taskKey, value){
           return new Promise<any>((resolve, reject) => {
             let currentUser = firebase.auth().currentUser;
-            this.afs.collection('usuario').doc(currentUser.uid).collection('tareas').doc(taskKey).set(value)
+            this.afs.collection('user').doc(currentUser.uid).collection('tareas').doc(taskKey).set(value)
             .then(
               res => resolve(res),
               err => reject(err)
@@ -86,7 +86,7 @@ private snapshotChangesSubscription: any;
         deleteTask(taskKey){
           return new Promise<any>((resolve, reject) => {
             let currentUser = firebase.auth().currentUser;
-            this.afs.collection('usuario').doc(currentUser.uid).collection('tareas').doc(taskKey).delete()
+            this.afs.collection('user').doc(currentUser.uid).collection('tareas').doc(taskKey).delete()
             .then(
               res => resolve(res),
               err => reject(err)
@@ -97,7 +97,7 @@ private snapshotChangesSubscription: any;
         createTask(value){
           return new Promise<any>((resolve, reject) => {
             let currentUser = firebase.auth().currentUser;
-            this.afs.collection('usuario').doc(currentUser.uid).collection('tareas').add({
+            this.afs.collection('user').doc(currentUser.uid).collection('tareas').add({
               title: value.title,
               description: value.description,
               image: value.image

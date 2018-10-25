@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../model/user';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { FIREBASE_CONFIG } from '../../app/app.firebase.config';
 
 /**
  * Generated class for the LoginPage page.

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, ModalController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { FirebaserestProvider } from '../../providers/firebaserest/firebaserest';
+//import { FirebaserestProvider } from '../../providers/firebaserest/firebaserest';
 import { ProductsPage } from '../products/products';
 import { DetailsPage } from '../details/details';
 import { TaskModalPage } from '../task-modal/task-modal';
+import { FIREBASE_CONFIG } from '../../app/app.firebase.config';
 
 
 /**
@@ -24,7 +25,7 @@ export class HomePage {
   constructor(
      public navCtrl: NavController,
      public navParams: NavParams,
-     private firebaseService: FirebaserestProvider,
+     /*private firebaseService: FirebaserestProvider*/
      private modalCtrl: ModalController) {
   }
 
@@ -32,7 +33,7 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
-  ionViewWillEnter(){
+  /*ionViewWillEnter(){
     this.getData();
   }
   getData(){
@@ -40,7 +41,7 @@ export class HomePage {
     .then(tasks => {
       this.items = tasks;
     })
-  }
+  }*/
   viewDetails(id, item){
     let data = {
       title: item.title,
@@ -52,7 +53,7 @@ export class HomePage {
       data: data
     })
   }
-  openNewUserModal(){
+  /*openNewUserModal(){
     let modal = this.modalCtrl.create(TaskModalPage);
     modal.onDidDismiss(data => {
       this.getData();
@@ -65,7 +66,7 @@ export class HomePage {
     .then(res => {
       this.navCtrl.push(ProductsPage);
     })
-  }
+  }*/
 
   /*ionViewWillLoad() {
     console.log("Entro");

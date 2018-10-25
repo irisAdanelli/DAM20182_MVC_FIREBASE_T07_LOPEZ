@@ -29,7 +29,7 @@ export class ProductsPage {
     ],
     'password': [
       { type: 'required', message: 'Se requiere contraseña.' },
-      { type: 'minlength', message: 'La contraseña debe tener al menos 6 caracteres.' }
+      { type: 'minlength', message: 'La contraseña debe tener al menos 6 caracteres' }
     ]
   };
 
@@ -56,14 +56,14 @@ export class ProductsPage {
       ])),
     });
   }
-  tryLogin(value){
+  /*tryLogin(value){
     this.authService.doLogin(value)
     .then(res => {
       this.navCtrl.push(HomePage);
     }, err => {
       this.errorMessage = err.message;
     })
-  }
+  }*/
     goRegisterPage(){
     this.navCtrl.push(RegisterPage);
   }

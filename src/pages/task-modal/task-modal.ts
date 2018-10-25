@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, normalizeURL, ToastController, Loa
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { FirebaserestProvider } from '../../providers/firebaserest/firebaserest';
-import { FIREBASE_CONFIG } from '../../app/app.firebase.config';
+//import { FIREBASE_CONFIG } from '../../app/app.firebase.config';
 /**
  * Generated class for the TaskModalPage page.
  *
@@ -39,7 +39,7 @@ export class TaskModalPage {
   }*/
 
   resetFields(){
-    this.image = "./assets/imgs/default_image.jpg";
+    this.image = "./assets/imgs/a.jpg";
     this.validations_form = this.formBuilder.group({
       title: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required)
