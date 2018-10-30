@@ -22,6 +22,9 @@ import { FIREBASE_CONFIG } from '../../app/app.firebase.config';
 })
 export class HomePage {
   items: Array<any>;
+  firebaseService: any;
+  afAuth: any;
+  toast: any;
   constructor(
      public navCtrl: NavController,
      public navParams: NavParams,
