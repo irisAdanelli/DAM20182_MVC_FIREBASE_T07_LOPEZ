@@ -25,7 +25,7 @@ private snapshotChangesSubscription: any;
     }
 
 
-    /*doRegister(value){
+    doRegister(value){
       return new Promise<any>((resolve, reject) => {
         firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
         .then(
@@ -41,7 +41,7 @@ private snapshotChangesSubscription: any;
             res => resolve(res),
             err => reject(err))
           });
-        }*/
+        }
 
         doLogout(){
           return new Promise((resolve, reject) => {

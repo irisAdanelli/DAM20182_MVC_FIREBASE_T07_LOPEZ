@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController, ModalController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-//import { FirebaserestProvider } from '../../providers/firebaserest/firebaserest';
+import { FirebaserestProvider } from '../../providers/firebaserest/firebaserest';
 import { ProductsPage } from '../products/products';
 import { DetailsPage } from '../details/details';
 import { TaskModalPage } from '../task-modal/task-modal';
@@ -33,7 +33,7 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
-  /*ionViewWillEnter(){
+  ionViewWillEnter(){
     this.getData();
   }
   getData(){
@@ -41,7 +41,7 @@ export class HomePage {
     .then(tasks => {
       this.items = tasks;
     })
-  }*/
+  }
   viewDetails(id, item){
     let data = {
       title: item.title,
@@ -53,7 +53,7 @@ export class HomePage {
       data: data
     })
   }
-  /*openNewUserModal(){
+  openNewUserModal(){
     let modal = this.modalCtrl.create(TaskModalPage);
     modal.onDidDismiss(data => {
       this.getData();
@@ -66,9 +66,9 @@ export class HomePage {
     .then(res => {
       this.navCtrl.push(ProductsPage);
     })
-  }*/
+  }
 
-  /*ionViewWillLoad() {
+  ionViewWillLoad() {
     console.log("Entro");
     this.afAuth.authState.subscribe(data => {
       if(data && data.email && data.uid){
@@ -101,7 +101,7 @@ export class HomePage {
     this.navCtrl.push("AgregarProductoPage");
   }
 
-  /*createTask(value){
+  createTask(value){
     return new Promise<any>((resolve, reject) => {
       let currentUser = this.afAuth.auth.currentUser;
       this.afAuth.auth.collection('people').doc(currentUser.uid).collection('tasks').add({
@@ -114,5 +114,5 @@ export class HomePage {
         err => reject(err)
       )
     })
-  }*/
+  }
 }

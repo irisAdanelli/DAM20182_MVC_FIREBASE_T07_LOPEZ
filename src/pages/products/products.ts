@@ -56,14 +56,14 @@ export class ProductsPage {
       ])),
     });
   }
-  /*tryLogin(value){
+  tryLogin(value){
     this.authService.doLogin(value)
     .then(res => {
       this.navCtrl.push(HomePage);
     }, err => {
       this.errorMessage = err.message;
     })
-  }*/
+  }
     goRegisterPage(){
     this.navCtrl.push(RegisterPage);
   }
